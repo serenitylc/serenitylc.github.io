@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C/C++相关 | 小鱼小鱼别皱眉</title><meta name="keywords" content="c/c++"><meta name="author" content="serenitylc"><meta name="copyright" content="serenitylc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是设计模式“每一个模式描述了一个在我们周围不断重复发生的问题，以及该问题的解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复劳动”。 ——Christopher Alexander 如何解决复杂性？ 分解 人们面对复杂性有一个常见的做法：即分而治之，将大问题分解为多个小问题，将复杂问题分解为多个简单问题。  抽象  更高层次来讲，人们处理复杂性有一个通用的技术，即抽象。由于不能掌">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C&#x2F;C++相关">
+<meta property="og:url" content="https://serenitylc.github.io/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/index.html">
+<meta property="og:site_name" content="小鱼小鱼别皱眉">
+<meta property="og:description" content="什么是设计模式“每一个模式描述了一个在我们周围不断重复发生的问题，以及该问题的解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复劳动”。 ——Christopher Alexander 如何解决复杂性？ 分解 人们面对复杂性有一个常见的做法：即分而治之，将大问题分解为多个小问题，将复杂问题分解为多个简单问题。  抽象  更高层次来讲，人们处理复杂性有一个通用的技术，即抽象。由于不能掌">
+<meta property="og:locale">
+<meta property="og:image" content="https://serenitylc.github.io/img/07.jpg">
+<meta property="article:published_time" content="2022-05-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-01T13:57:01.003Z">
+<meta property="article:author" content="serenitylc">
+<meta property="article:tag" content="c&#x2F;c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://serenitylc.github.io/img/07.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://serenitylc.github.io/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: serenitylc","link":"Link: ","source":"Source: 小鱼小鱼别皱眉","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C/C++相关',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-01 21:57:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="小鱼小鱼别皱眉" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/07.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小鱼小鱼别皱眉</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-box-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C/C++相关</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2022-05-19T16:00:00.000Z" title="Created 2022-05-20 00:00:00">2022-05-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/records/">records</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C/C++相关"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="/./images/C++11.png" alt="示例"></p>
+<h1 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h1><p>“每一个模式描述了一个在我们周围不断重复发生的问题，以及该问题的解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复劳动”。 ——Christopher Alexander</p>
+<h1 id="如何解决复杂性？"><a href="#如何解决复杂性？" class="headerlink" title="如何解决复杂性？"></a>如何解决复杂性？</h1><ul>
+<li><p>分解</p>
+<p>人们面对复杂性有一个常见的做法：即分而治之，将大问题分解为多个小问题，将复杂问题分解为多个简单问题。</p>
+</li>
+<li><p>抽象</p>
+</li>
+<li><p>更高层次来讲，人们处理复杂性有一个通用的技术，即抽象。由于不能掌握全部的复杂对象，我们选择忽视它的非本质细节，而去处理泛化和理想化了的对象模型。</p>
+</li>
+</ul>
+<h1 id="重构关键技法"><a href="#重构关键技法" class="headerlink" title="重构关键技法"></a>重构关键技法</h1><ul>
+<li>静态 → 动态</li>
+<li>早绑定 → 晚绑定</li>
+<li>继承 → 组合</li>
+<li>编译时依赖 → 运行时依赖</li>
+<li>紧耦合 → 松耦合</li>
+</ul>
+<h1 id="面向对象设计原则"><a href="#面向对象设计原则" class="headerlink" title="面向对象设计原则"></a>面向对象设计原则</h1><p>依赖倒置原则（DIP）</p>
+<ul>
+<li>高层模块(稳定)不应该依赖于低层模块(变化)，二者都应该依赖于抽象(稳定) 。</li>
+<li>抽象(稳定)不应该依赖于实现细节(变化) ，实现细节应该依赖于抽象(稳定)。</li>
+</ul>
+<p>开放封闭原则（OCP）</p>
+<ul>
+<li>对扩展开放，对更改封闭。</li>
+<li>类模块应该是可扩展的，但是不可修改。</li>
+</ul>
+<p>单一职责原则（SRP）</p>
+<ul>
+<li>一个类应该仅有一个引起它变化的原因。</li>
+<li>变化的方向隐含着类的责任。</li>
+</ul>
+<p>里氏Liskov 替换原则（LSP）</p>
+<ul>
+<li>子类必须能够替换它们的基类(IS-A)。</li>
+<li>继承表达类型抽象。</li>
+</ul>
+<p>接口隔离原则（ISP）</p>
+<ul>
+<li>不应该强迫客户程序依赖它们不用的方法。</li>
+<li>接口应该小而完备。</li>
+</ul>
+<p>优先使用对象组合，而不是类继承</p>
+<ul>
+<li>类继承通常为“白箱复用”，对象组合通常为“黑箱复用” 。</li>
+<li>继承在某种程度上破坏了封装性，子类父类耦合度高。</li>
+<li>而对象组合则只要求被组合的对象具有良好定义的接口，耦合度低。</li>
+</ul>
+<p>封装变化点</p>
+<ul>
+<li>使用封装来创建对象之间的分界层，让设计者可以在分界层的一侧进行修改，而不会对另一侧产生不良的影响，从而实现层次间的松耦合。</li>
+</ul>
+<p>针对接口编程，而不是针对实现编程</p>
+<ul>
+<li>不将变量类型声明为某个特定的具体类，而是声明为某个接口。</li>
+<li>客户程序无需获知对象的具体类型，只需要知道对象所具有的接口。</li>
+<li>减少系统中各部分的依赖关系，从而实现“高内聚、松耦合”的类型设计方案。</li>
+</ul>
+<h3 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h3><p>默认情况下编译器是以较低的标准来进行编译</p>
+<p>g++ -std&#x3D;c++17 your_file.cpp -o your_program</p>
+<p>容器：存放数据，STL容器是一种class template。</p>
+<p>算法：STL算法是一种function template。</p>
+<p>迭代器：容器与算法之间的胶合剂，共有五种类型，所有STL容器都附带有自己专属的迭代器，原生指针也是一种迭代器。</p>
+<p>仿函数：行为类似函数，可作为算法的某种策略，是一种重载了operator()的class或class template。</p>
+<p>适配器：用来修饰容器或仿函数或迭代器接口。</p>
+<p>空间配置器：负责空间的配置与管理，是一个实现了动态空间配置、空间管理、空间释放的class template。</p>
+<p>static：修饰局部变量时，使得被修饰的变量成为静态变量，存储在静态区。其生命周期与程序相同，在main函数之前初始化，程序退出时销毁。（无论是局部静态还是全局静态）。此外，static限制了链接属性，被修饰的全局变量只能被包含该定义的文件访问（多文件编译时，隐藏），在C++中还可以实现不同对象之间数据共享。</p>
+<p>volatile：“易变的”，因为访问寄存器要比访问内存单元快,所以编译器一般会作减少存取内存的优化，但可能会读脏数据。当要求使用volatile声明变量值时，系统总是重新从它所在的内存读取数据，即使它前面的指令刚刚从该处读取过数据。精确地说就是，遇到这个关键字声明的变量，编译器对访问该变量的代码就不再进行优化，从而可以提供对特殊地址的稳定访问；如果不使用valatile，则编译器将对所声明的语句进行优化。</p>
+<p>const：防止变量被修改，必须定义时初始化。对于指针又分为顶层和底层，表示指针本身或指向内容的修改。可通过const_cast进行类型转换。（函数的值传递会创建临时变量，不会改变实参，加不加const无影响，即无法重载进行区分）</p>
+<p>C++中四种类型转换是：static_cast, dynamic_cast, const_cast, reinterpret_cast</p>
+<p>1、const_cast：用于将const变量转为非const</p>
+<p>2、static_cast：用于各种隐式转换，比如非const转const，void*转指针等, static_cast能用于多态向上转化，如果向下转能成功但是不安全，结果未知；</p>
+<p>3、dynamic_cast：用于动态类型转换。只能用于含有虚函数的类，用于类层次间的向上和向下转化。只能转指针或引用。向下转化时，如果是非法的对于指针返回NULL，对于引用抛异常。要深入了解内部转换的原理。</p>
+<p>向上转换：指的是子类向基类的转换</p>
+<p>向下转换：指的是基类向子类的转换</p>
+<p>它通过判断在执行到该语句的时候变量的运行时类型和要转换的类型是否相同来判断是否能够进行向下转换。</p>
+<p>4、reinterpret_cast：几乎什么都可以转，比如将int转指针，可能会出问题，尽量少用；</p>
+<p>引用的本质就是所引用对象的地址。</p>
+<p>C++里面的四个智能指针(防止内存泄漏): auto_ptr, shared_ptr, weak_ptr, unique_ptr 其中后三个是c++11支持，并且第一个已经被11弃用。unique_ptr 是一种独享被管理对象指针所有权的智能指针。unique_ptr对象包装一个原始指针，并负责其生命周期。当该对象被销毁时，会在其析构函数中删除关联的原始指针。</p>
+<p>++i 实现：int&amp; int::operator++ () { *this +&#x3D;1；return *this；}</p>
+<p>i++ 实现：const int int::operator (int) { int oldValue &#x3D; <em>this；++（</em>this）；return oldValue；}</p>
+<p>__attribute((constructor))是gcc扩展，标记这个函数应当在main函数之前执行。同样__attribute((destructor))，</p>
+<p>标记函数应当在程序结束之前（main结束之后，或者调用了exit后）执行。</p>
+<p>虚函数表具体是怎样实现运行时多态的?编译器为每一个类维护一个虚函数表，虚函数表是类对象之间共享的，子类若重写父类虚函数，虚函数表中，该函数的地址会被替换，对于存在虚函数的类的对象，在VS中，对象的头部存放指向虚函数表的指针，对虚函数指针的地址解引用得到虚函数表的地址。</p>
+<p>不要在构造函数中调用虚函数：因为父类对象会在子类之前进行构造，此时子类部分的成员还未初始化， 因此调用子类的虚函数是不安全的。不要在析构函数中调用虚函数：析构函数在销毁一个对象时，先调用子类析构，再调用基类析构，此时派生类对象的数据成员已经“销毁”，再调用子类虚函数没有意义。智能指针能够帮助我们处理资源泄露、空悬指针、比较隐晦的由异常造成的资源泄露问题。</p>
+<p>类之间的关系</p>
+<p>（1）继承：is a子类继承父类的方法（鹅和鸟的关系）</p>
+<p>（2）组合：has-a整体和部分的关系，整体和部分之间是不可可分离的，它们具有相同的生命周期（鸟和翅膀的关系）</p>
+<p>（3）聚合：contains-a：整体和部分的关系，整体和部分之间是可分离的，它们可以具有各自的生命周期，部分可以属于多个整体对象，也可以为多个整体对象共享。如员工和公司之间的关系。</p>
+<p>（4）关联：弱关系，双方一般是平等的。如明星和粉丝之间的关系。</p>
+<p>（5）实现：实现是类和接口之间的关系。接口通过纯虚函数来实现。</p>
+<p>（6）依赖： 简单的理解，依赖就是一个类A使用到了另一个类B，而这种使用关系是具有偶然性的、临时性的、非常弱的，但是类B的变化会影响到类A。比如某人要过河，需要借用一条船，此时人与船之间的关系就是依赖。表现在代码层面，为类B作为参数被类A在某个method方法中使用。</p>
+<p>unordered_map是如何解决哈希冲突的</p>
+<p>一个桶中可以放多个元素，元素的关键字相同；也就是通常的链地址法</p>
+<p>unordered_map会维护桶的平均元素数量，会在需要时添加新的桶，以使得load_factor&lt;&#x3D;max_load_factor</p>
+<p>template <class t> struct atomic;</class></p>
+<p>C++11标准从不同的视角看待问题(多线程下访问共享资源&#x2F;数据)：需要同步的总是资源&#x2F;数据，而不是代码。因此C++11对数据进行了更为良好的抽象，引入”原子数据类型”&#x2F;atomic类型，以达到对开发者掩盖互斥锁、临界区的目的。C++11对常见的原子操作进行了抽象，定义出统一的接口，并根据编译选项&#x2F;环境产生平台相关的实现。新标准将原子操作定义为atomic模板类的成员函数，囊括了绝大多数典型的操作——读、写、比较、交换等。通常情况下，内存模型是一个硬件上的概念，表示机器指令（或者将其视为汇编指令）是以什么样的顺序被处理器执行的。现代的处理器并不是逐条处理机器指令的(强顺序的(strong ordered)&#x2F;弱顺序的(weak ordered))。弱顺序的内存模型: 可以进一步挖掘指令中的并行性，提高指令执行的性能。你一会想顺序执行，一会又想“乱序”执行，更有甚者，还想对“乱”的程度分等级……如何提供这种灵活性呢？在C++11标准中，设计者给出的解决方式是让程序员为原子操作指定所谓的内存顺序：memory_order。实际上，atomic类型的其他原子操作接口都有memory_order这个参数，而且默认值都是std::memory_order_seq_cst。顺序一致内存顺序&#x2F;memory_order_seq_cst：全部存取都按照顺序执行(不要重排序指令，不要整什么指令乱序执行，就按照代码的先后顺序执行机器指令)。松散内存顺序&#x2F;memory_order_relaxed：不对执行顺序做任何保证。</p>
+<p>《深入理解C++11 - C++11新特性解析与应用》</p>
+<p>原子操作彻底宣告C++11来到了多线程和并行编程的时代。相对于偏于底层的pthread库，C++通过定义原子类型的方式，轻松地化解了互斥访问共享数据的难题。不过C++也延续了其易于学习难于精通的特性，虽然atomic&#x2F;原子类型使用上较为简单，但其函数接口(原子操作)却可以有不用的内存顺序。C++11从各种不同的平台上抽象出了一个软件的内存模型，并以内存顺序进行描述，以使得想进一步挖掘并行系统性能的程序员有足够简单的手段来完成以往只能通过内联汇编来完成的工作。</p>
+<p>C++11中这些内存顺序相关的设计，主要还是为了从各种繁杂不同的平台上抽象出独立于硬件平台的并行操作。对于我们日常的开发工作，默认的顺序一致内存顺序memory_order_seq_cst足可以应付了，但是开发者想让多线程程序获得更好的性能的话，尤其是在一些弱内存顺序的平台上，比如PowerPC，建立原子操作间的内存顺序还是很有必要的，因为着能带来极大的性能提升，这也是一些弱一致性内存模型平台的优势。但对于并行编程来说，可能最根本的，还是思考如何将大量计算的问题，按需分解成多个独立的、能够同时运行的部分，并找出真正需要在线程间共享的数据，实现为C++11的原子类型。虽然有了原子类型的良好设计，实现这些都可以非常的便捷，但并不是所有的问题或者计算都适合用并行计算来解决，对于不适用的问题，强行用并行计算来解决会收效甚微，甚至起到相反效果。因此在决定使用并行计算解决问题之前，程序员必须要有清晰的设计规划。而在实现了代码并行后，进一步使用一些性能调试工具来提高并行程序的性能也是非常必要的。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://serenitylc.github.io">serenitylc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://serenitylc.github.io/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/">https://serenitylc.github.io/2022/05/20/C:C++相关/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c-c/">c/c++</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> Donate</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/04/20/vim/"><img class="prev-cover" src="/img/00.jpg" onerror="onerror=null;src='/img/default_post_cover.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">vim--write once, use anywhere</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/20/tmux/"><img class="next-cover" src="/img/09.png" onerror="onerror=null;src='/img/default_post_cover.png'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">tmux--terminal multiplexer</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">serenitylc</div><div class="author-info__description">然则独手击拍之音何若？</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/serenitylc"><i class="fab fa-github"></i><span>Follow me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/serenitylc" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1757921819@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">阅读过程中如果遇到问题，请及时评论或者留言，看到了会第一时间回复，如果未收到回复也可加博主vx（申请时请备注）。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">什么是设计模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%A4%8D%E6%9D%82%E6%80%A7%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何解决复杂性？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E6%9E%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">重构关键技法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">4.</span> <span class="toc-text">面向对象设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Notes"><span class="toc-number">4.0.1.</span> <span class="toc-text">Notes</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/07/31/hello-world/" title="RE0"><img src="/img/01.jpg" onerror="this.onerror=null;this.src='/img/default_post_cover.png'" alt="RE0"/></a><div class="content"><a class="title" href="/2022/07/31/hello-world/" title="RE0">RE0</a><time datetime="2022-07-31T13:00:00.000Z" title="Created 2022-07-31 21:00:00">2022-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/20/tmux/" title="tmux--terminal multiplexer"><img src="/img/09.png" onerror="this.onerror=null;this.src='/img/default_post_cover.png'" alt="tmux--terminal multiplexer"/></a><div class="content"><a class="title" href="/2022/07/20/tmux/" title="tmux--terminal multiplexer">tmux--terminal multiplexer</a><time datetime="2022-07-19T16:00:00.000Z" title="Created 2022-07-20 00:00:00">2022-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/" title="C/C++相关"><img src="/img/07.jpg" onerror="this.onerror=null;this.src='/img/default_post_cover.png'" alt="C/C++相关"/></a><div class="content"><a class="title" href="/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/" title="C/C++相关">C/C++相关</a><time datetime="2022-05-19T16:00:00.000Z" title="Created 2022-05-20 00:00:00">2022-05-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/20/vim/" title="vim--write once, use anywhere"><img src="/img/00.jpg" onerror="this.onerror=null;this.src='/img/default_post_cover.png'" alt="vim--write once, use anywhere"/></a><div class="content"><a class="title" href="/2022/04/20/vim/" title="vim--write once, use anywhere">vim--write once, use anywhere</a><time datetime="2022-04-19T16:00:00.000Z" title="Created 2022-04-20 00:00:00">2022-04-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2019/10/28/machine-learning/" title="machine-learning"><img src="/img/06.png" onerror="this.onerror=null;this.src='/img/default_post_cover.png'" alt="machine-learning"/></a><div class="content"><a class="title" href="/2019/10/28/machine-learning/" title="machine-learning">machine-learning</a><time datetime="2019-10-28T14:29:41.000Z" title="Created 2019-10-28 22:29:41">2019-10-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/07.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By serenitylc</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://codersunny.com">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://serenitylc.github.io/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/'
+    this.page.identifier = '/2022/05/20/C:C++%E7%9B%B8%E5%85%B3/'
+    this.page.title = 'C/C++相关'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script defer src="https://fastly.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/wow_init.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
