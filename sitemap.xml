@@ -128,13 +128,6 @@
 
   
   <url>
-    <loc>https://serenitylc.github.io/tags/c-c/</loc>
-    <lastmod>2022-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://serenitylc.github.io/tags/algorithm/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -149,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://serenitylc.github.io/tags/think/</loc>
+    <loc>https://serenitylc.github.io/tags/c-c/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -170,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://serenitylc.github.io/tags/ml/</loc>
+    <loc>https://serenitylc.github.io/tags/think/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://serenitylc.github.io/tags/tmux/</loc>
+    <loc>https://serenitylc.github.io/tags/ml/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -192,6 +185,13 @@
   
   <url>
     <loc>https://serenitylc.github.io/tags/fsm/</loc>
+    <lastmod>2022-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://serenitylc.github.io/tags/tmux/</loc>
     <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
